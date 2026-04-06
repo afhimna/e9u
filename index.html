@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasil Belajar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: "Times New Roman", serif;
+    background: linear-gradient(120deg, #FFD700, #FFC300, #FFD700);
+    background-size: 200% 200%;
+    animation: shimmer 10s ease infinite;
+    color: black;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+/* Particle background */
+.particle {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: float 12s linear infinite;
+    z-index: 0;
+}
+
+/* Particle animation */
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5); opacity:0; }
+    20% { opacity:0.8; }
+    100% { transform: translateY(-10vh) scale(1); opacity:0; }
+}
+
+/* Judul */
+.judul {
+    text-align: center;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+/* Judul muncul */
+.judul.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Subjudul */
+.subjudul {
+    text-align: center;
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: bold;
+    margin-bottom: 30px; /* jarak lebih rapat */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease 0.2s;
+}
+
+/* Subjudul muncul */
+.subjudul.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Underline shimmer untuk subjudul */
+.subjudul::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: black;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    transition: 0.5s ease;
+}
+.subjudul:hover::after {
+    width: 100%;
+}
+
+/* Teks Arab */
+.arab {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    text-align: justify;
+    text-align-last: right;
+    font-size: clamp(18px, 4.5vw, 22px);
+    line-height: 1.8; /* jarak lebih rapat */
+    margin-bottom: 20px; /* jarak antar paragraf lebih rapat */
+    padding: 10px;
+    border-radius: 10px;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+/* Teks muncul */
+.arab.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover premium */
+.arab:hover {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Tap effect HP */
+.arab:active {
+    transform: scale(0.98);
+}
+
+/* Nama kitab */
+.kitab {
+    font-weight: bold;
+    color: black;
+    transition: all 0.4s ease;
+}
+
+.kitab:hover {
+    text-shadow: 0 0 20px #fff;
+    letter-spacing: 1px;
+}
+
+/* Background shimmer */
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Particles -->
+<div class="particle" style="left:5%; animation-delay:0s;"></div>
+<div class="particle" style="left:20%; animation-delay:2s;"></div>
+<div class="particle" style="left:35%; animation-delay:4s;"></div>
+<div class="particle" style="left:50%; animation-delay:1s;"></div>
+<div class="particle" style="left:65%; animation-delay:3s;"></div>
+<div class="particle" style="left:80%; animation-delay:5s;"></div>
+<div class="particle" style="left:90%; animation-delay:6s;"></div>
+
+<div class="container">
+
+<div class="judul">HASIL BELAJAR</div>
+<div class="subjudul">Kalimat لا bermakna غير</div>
+<div class="arab"><span class="kitab">حاشية الصبان ج ٢ ص ٣٨٥ ط دار الكتب العلمية</span></div>
+<div class="arab">فائدة: إذا قلت أتيتك يوم لا حرّ ولا برد جاز لك رفع حرّ وبرد على أن لا ملغاة أو عاملة عمل ليس وفتحهما على أن لا عاملة عمل إن وجرهما على أن لا زائدة حكى الأخفش الأوجه الثلاثة كذا نقلوا. وفيه أن جعل لا زائدة لا يلائم المعنى إلا أن يراد بكونها زائدة كونها معترضة بين المتضايفين كلا المعترضة بين الجار والمجرور في جئت بلا زاد كما عبر بذلك الدماميني ولو جعل الجر على أن لا اسم بمعنى غير لكان أوضح فتأمل</div>
+
+<div class="subjudul">Jumlah dan Syibh Jumlah setelah Nakirah dan Ma'rifah</div>
+<div class="arab"><span class="kitab">مغني اللبيب ج ١ ص ٥٧٨</span></div>
+<div class="arab">حكمهمَا بعدهمَا حكم الْجمل فهما صفتان فِي نَحْو رَأَيْت طائرا فَوق غُصْن أَو على غُصْن لِأَنَّهُمَا بعد نكرَة مَحْضَة وحالان فِي نَحْو رَأَيْت الْهلَال بَين السَّحَاب أَو فِي الْأُفق لِأَنَّهُمَا بعد معرفَة مَحْضَة ومحتملان لَهما فِي نَحْو يُعجبنِي الزهر فِي أكمامه وَالثَّمَر على أغصانه لِأَن الْمُعَرّف الجنسي كالنكرة وَفِي نَحْو هَذَا ثَمَر يَانِع على أغصانه لِأَن النكرَة الموصوفة كالمعرفة</div>
+
+<div class="subjudul">Kaedah perpindahan harakat wawu dan ya' ke huruf sebelumnya</div>
+<div class="arab"><span class="kitab">قواعد الإعلال ص ٨ ط مكتبة أحمد نبهان</span></div>
+<div class="arab">القاعدة الثانية، إذا وقعت الواو والياء عينا متحركة من أجوف وكان ما قبلهما ساكنا صحيحا نقلت حركتهما إلى ما قبلهما نحو يقُوْم ويبِيْع أصلهما يَقْوُم ويَبْيِ</div>
+
+<div class="subjudul">Malaikat Ridwan</div>
+<div class="arab"><span class="kitab">نور الظلام ص ٣٥ ط دار الكتب الإسلامية</span></div>
+<div class="arab">والخازنون اثنان، مالك ورضوان، فمالك موكل بالنيران السبعة ومعه الزبانية وهم تسعة عشر نفرا - إلى أن قال - ورضوان موكل بالجنان وهو رئيس خزنتها</div>
+</div>
+
+<script>
+// Cinematic Scroll Reveal per element
+const elements = document.querySelectorAll('.judul, .subjudul, .arab');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            const delay = Array.from(elements).indexOf(entry.target) * 0.25;
+            setTimeout(() => entry.target.classList.add('show'), delay*1000);
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
